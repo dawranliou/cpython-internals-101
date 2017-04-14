@@ -12,6 +12,9 @@
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="lib/css/github.css">
 
+        <!-- custom theme -->
+        <link rel="stylesheet" href="css/custom.css">
+
         <!-- Printing and PDF exports -->
         <script>
             var link = document.createElement( 'link' );
@@ -25,25 +28,26 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    CPython Internals 101
+                    <h2>CPython Internals 101</h2>
+                    <p>Just like Python, CPython is readible and beautiful.</p>
+                </section>
+
+                <section>
+                    <h2>Agenda</h2>
+                    <ol>
+                        <li>Overview</li>
+                        <li>Walkthrough</li>
+                        <li>Example</li>
+                    </ol>
                 </section>
 
                 <section>
                     <section>
-                        Who is this guy?
-                    </section>
-                    <section>
+                        <h3>Who is this guy?</h3>
+                        <img data-src="http://en.gravatar.com/userimage/99964636/f9367cffe912e77fa93af6784d93b99e.jpg?size=240" alt="">
                         <p>Daw-Ran Liou</p>
                         <p>@dawranliou</p>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        CPython Internals 101
-                    </section>
-                    <section>
-                        Just like Python the language, CPython is readible, and beautiful.
+                        <p>dawranliou.com</p>
                     </section>
                 </section>
 
@@ -57,6 +61,7 @@
                             <li class="fragment">Research</li>
                             <li class="fragment">Makes you a better programmer</li>
                             <li class="fragment">Solve Problems</li>
+                            <li class="fragment">Showoff</li>
                         </ol>
                     </section>
                     <section data-transition="none">
@@ -84,6 +89,8 @@ True
                     <section>
                         <pre>
                             <code>
+>>> False is False is False
+
   2           0 LOAD_GLOBAL              0 (False)
               3 LOAD_GLOBAL              0 (False)
               6 DUP_TOP
@@ -102,6 +109,8 @@ True
                     <section>
                         <pre>
                             <code>
+>>> 1 < 2 < 3
+
   2           0 LOAD_CONST               1 (1)
               3 LOAD_CONST               2 (2)
               6 DUP_TOP
@@ -130,13 +139,38 @@ True
 
                 <section>
                     <section>
-                        How?
-                    </section>
-                    <section>
+                        <h3>How?</h3>
                         <ol>
-                            <li><a href="https://bitbucket.org/pypy/pypy">PyPy</a></li>
-                            <li class="fragment">10-hour CPython Internals Walkthrough</li>
+                            <li class="fragment"><a href="https://www.youtube.com/playlist?list=PLzV58Zm8FuBL6OAv1Yu6AwXZrnsFbbR0S">10-hour CPython Internals Walkthrough</a></li>
+                            <li class="fragment"><a href="https://github.com/dawran6/cpython-internals-learn">github.com/dawran6/cpython-internals-learn</a></li>
+                            <li class="fragment">Built-in dis module</li>
+                            <li class="fragment"><a href="https://bitbucket.org/pypy/pypy">(PyPy)</a></li>
                         </ol>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Walkthrough</h2>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Python sourcecode tree
+
+                            1. `Include/` - all the .h files
+                            1. `Objects/` - all the .c files representing python objects
+                            1. `Python/` - the main runtime
+                            1. `Modules/` - built-in modules implemented in C
+                            1. `Libs/` - standard libraries implemented in Python
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### What's useful
+                            1. `Python/ceval.c`
+                            1. `Include/` - object definition
+                            1. `Objects/` - object implementation
+                        </script>
                     </section>
                 </section>
 
