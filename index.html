@@ -40,6 +40,10 @@
                         <li>Example</li>
                     </ol>
                 </section>
+                
+                <section>
+                    <h2>Scope</h2>
+                </section>
 
                 <section>
                     <section>
@@ -144,6 +148,7 @@ True
                             <li class="fragment"><a href="https://www.youtube.com/playlist?list=PLzV58Zm8FuBL6OAv1Yu6AwXZrnsFbbR0S">10-hour CPython Internals Walkthrough</a></li>
                             <li class="fragment"><a href="https://github.com/dawran6/cpython-internals-learn">github.com/dawran6/cpython-internals-learn</a></li>
                             <li class="fragment">Built-in dis module</li>
+                            <li class="fragment"><a href="http://www.pythontutor.com">PythonTutor</a></li>
                             <li class="fragment"><a href="https://bitbucket.org/pypy/pypy">(PyPy)</a></li>
                         </ol>
                     </section>
@@ -174,6 +179,22 @@ True
                     </section>
                     <section>
                         <h2>OPCODE</h2>
+                        <pre><code>  1           0 LOAD_CONST               0 (1)
+              3 STORE_NAME               0 (x)
+
+  2           6 LOAD_CONST               1 (2)
+              9 STORE_NAME               1 (y)
+
+  3          12 LOAD_NAME                0 (x)
+             15 LOAD_NAME                1 (y)
+             18 BINARY_ADD
+             19 STORE_NAME               2 (z)
+
+  4          22 LOAD_NAME                2 (z)
+             25 PRINT_ITEM
+             26 PRINT_NEWLINE
+             27 LOAD_CONST               2 (None)
+             30 RETURN_VALUE</code></pre>
                     </section>
                 </section>
 
